@@ -21,7 +21,7 @@ class KeyManager {
         init(Cipher.ENCRYPT_MODE, getKey())
     }
 
-    fun decryptCipherForIv(iv : ByteArray) : Cipher{
+    private fun decryptCipherForIv(iv : ByteArray) : Cipher{
         return Cipher.getInstance(TRANSFORMATION).apply {
             init(Cipher.DECRYPT_MODE, getKey(), IvParameterSpec(iv) )
         }
